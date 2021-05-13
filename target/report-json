@@ -1,0 +1,97 @@
+[
+  {
+    "comments": [
+      {
+        "line": 1,
+        "value": "# language: pt"
+      }
+    ],
+    "line": 3,
+    "elements": [
+      {
+        "line": 9,
+        "name": "Preencher Solicitacao Online",
+        "description": "",
+        "id": "solicitacao-de-seguro-veicular;preencher-solicitacao-online",
+        "type": "scenario",
+        "keyword": "Cenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 10,
+            "name": "que o cliente acessa o site da seguradora",
+            "match": {},
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 11,
+            "name": "preencha o formulário com os dados do veiculo",
+            "match": {},
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 12,
+            "name": "insira os dados do seguro",
+            "match": {},
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 13,
+            "name": "insira os dados do produto",
+            "match": {},
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 14,
+            "name": "seleciona a opcao de preco",
+            "match": {},
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 15,
+            "name": "enviar a cotacao",
+            "match": {},
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 16,
+            "name": "deve verificar a mensagem de sucesso",
+            "match": {},
+            "keyword": "Entao "
+          }
+        ],
+        "tags": [
+          {
+            "line": 8,
+            "name": "@seguro"
+          }
+        ]
+      }
+    ],
+    "name": "Solicitacao de Seguro Veicular",
+    "description": "Eu como cliente, desejo solicitar o seguro veicular no site da seguradora\r\nAtraves do formulario  com os dados do veiculo, opcao de seguro, produto e preco\r\nE realizar o envio da solicitacao",
+    "id": "solicitacao-de-seguro-veicular",
+    "keyword": "Funcionalidade",
+    "uri": "src/test/resources/features/seguro_veicular.feature"
+  }
+]
