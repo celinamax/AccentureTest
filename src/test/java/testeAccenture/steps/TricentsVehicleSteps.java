@@ -32,7 +32,6 @@ public class TricentsVehicleSteps {
 	SendQuotePage sendQuote = new SendQuotePage(driver);
 	
 	
-	/*	O projeto está configurado para rodar tanto pela feature quanto pela RunnerTest*/
 	@Dado("^que o cliente acessa o site da seguradora$")
 	public void queOClienteAcessaOSiteDaSeguradora() {
 		new Driver();
@@ -42,37 +41,39 @@ public class TricentsVehicleSteps {
 	@Dado("^preencha o formulário com os dados do veiculo$")
 	public void preenchaOFormulárioComOsDadosDoVeiculo() throws Exception {
 		vehiclePage.preencherFormulario(driver);
-//		Assert.assertEquals("Enter Vehicle Data", driver.getTitle());
+		Assert.assertEquals("Enter Insurant Data", driver.getTitle());
 	}
 
 	@Dado("^insira os dados do seguro$")
 	public void insiraOsDadosDoSeguro() throws InterruptedException {
 		insuratDataPage.preencherDadosDoSeguro(driver);
-//		Assert.assertEquals("Enter Insurant Data", driver.getTitle());
+		Assert.assertEquals("Enter Product Data", driver.getTitle());
 	}
 
 	@Dado("^insira os dados do produto$")
 	public void insiraOsDadosDoProduto() {
 		productDataPage.preencherDadosDoProduto(driver);
-//		Assert.assertEquals("Enter Product Data", driver.getTitle());
+		Assert.assertEquals("Select Price Option", driver.getTitle());
 	}
 
 	@Dado("^seleciona a opcao de preco$")
 	public void selecionaAOpcaoDePreco() throws InterruptedException {
 		priceOptionPage.selecionarOpcaoDePreco(driver);
-//		Assert.assertEquals("Send Quote", driver.getTitle());
+		Assert.assertEquals("Send Quote", driver.getTitle());
 	}
 
 	@Quando("^enviar a cotacao$")
 	public void enviarACotacao() throws InterruptedException {
 		sendQuote.enviarCotacao(driver);
-//		Assert.assertEquals("Send Quote", driver.getTitle());
+		Assert.assertEquals("Send Quote", driver.getTitle());
 	}
 
 	@Entao("^deve verificar a mensagem de sucesso$")
 	public void deveVerificarAMensagemDeSucesso() throws InterruptedException {
-//		Assert.assertEquals("Sending e-mail success!", sendQuote.obterMsg());
+		sendQuote.validaMsg(driver);
 	}
+	
+	
 
 	@After(order = 1)
 	public void screenshot(Scenario scenario) {

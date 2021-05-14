@@ -2,6 +2,7 @@ package testeAccenture.pages;
 
 import org.openqa.selenium.WebDriver;
 
+import junit.framework.Assert;
 import testeAccenture.core.BasePage;
 import testeAccenture.enums.ByValue;
 
@@ -39,7 +40,7 @@ public class InsurantDataPage {
 		occupation.select(driver, "Employee");
 		hobbies.click(driver);
 		website.sendKeys(driver, "www.celinamax.com.br");
-		buttonNext.click(driver);
+		buttonNext.click(driver);		
 	}
-
+	
 }

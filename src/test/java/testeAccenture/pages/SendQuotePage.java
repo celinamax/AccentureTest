@@ -1,5 +1,6 @@
 package testeAccenture.pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import testeAccenture.core.BasePage;
@@ -7,7 +8,7 @@ import testeAccenture.enums.ByValue;
 
 public class SendQuotePage {
 	private WebDriver driver;
-	BasePage basePage;
+	BasePage basePage = new BasePage(driver, null, null);
 
 	public SendQuotePage(WebDriver driver) {
 		this.driver = driver;
@@ -19,8 +20,16 @@ public class SendQuotePage {
 	public BasePage password = new BasePage(driver, ByValue.XPATH, "//input[@id='password']");
 	public BasePage confirmPassword = new BasePage(driver, ByValue.XPATH, "//input[@id='confirmpassword']");
 	public BasePage comments = new BasePage(driver, ByValue.XPATH, "//textarea[@id='Comments']");
-	public BasePage buttonNext = new BasePage(driver, ByValue.XPATH, "//button[@id='sendemail']");
-	public BasePage buttonMsg = new BasePage(driver, ByValue.XPATH, "//button[@class='confirm']");
+	public BasePage buttonSend = new BasePage(driver, ByValue.XPATH, "//button[@id='sendemail']");
+	public BasePage messageSuccess = new BasePage(driver, ByValue.CSS,"body > div.sweet-alert.showSweetAlert.visible > h2");
+	public BasePage buttonConfirm = new BasePage(driver, ByValue.XPATH, "//*[@class='sa-confirm-button-container']");
+
+	public void  validaMsg(WebDriver driver) throws InterruptedException {
+		String msg =  messageSuccess.getText(driver);	
+		Assert.assertEquals("Sending e-mail success!", msg);
+		buttonConfirm.click(driver);
+	}
+
 	public void enviarCotacao(WebDriver driver) throws InterruptedException {
 		email.sendKeys(driver, "celinamax@gmail.com");
 		phone.sendKeys(driver, "11996319691");
@@ -28,12 +37,6 @@ public class SendQuotePage {
 		password.sendKeys(driver, "Max5105");
 		confirmPassword.sendKeys(driver, "Max5105");
 		comments.sendKeys(driver, "Include Travel Insurance");
-		buttonNext.click(driver);
+		buttonSend.click(driver);				
 	}
-
-	public String obterMsg() throws InterruptedException {
-		buttonMsg.click(driver);
-		return basePage.validarMensagemDeSucesso(driver);
-	}
-
 }

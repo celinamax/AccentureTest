@@ -47,7 +47,6 @@ public class VehiclePage {
 		licensePlateNumber.sendKeys(driver, "MAX5105");
 		annualMileage.sendKeys(driver, "120");
 		nextButton.click(driver);
-//		nextButton.scrollParaCima(driver);
 	}
 
 }

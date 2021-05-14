@@ -18,7 +18,7 @@ public class PriceOptionPage {
 	
 	public void selecionarOpcaoDePreco(WebDriver driver) throws InterruptedException {
 		price.click(driver);
-		buttonNext.scrollParaBaixo(driver);
+		buttonNext.scroll(driver);
 		buttonNext.click(driver);
 	}
 	

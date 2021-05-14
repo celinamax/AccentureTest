@@ -1,11 +1,9 @@
 package testeAccenture.core;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -23,13 +21,9 @@ public class BasePage {
 		this.value = value;
 	}
 
-	public BasePage() {
-
-	}
-
 	public WebElement elementoClicavel(WebDriver driver) {
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(10);
 			WebDriverWait wait = new WebDriverWait(driver, 10);
 			switch (byValue) {
 			case XPATH:
@@ -64,29 +58,20 @@ public class BasePage {
 		select.selectByVisibleText(visibleText);
 	}
 
-	public String validarMensagemDeSucesso(WebDriver driver) {
-//		new Driver();
-//		driver = Driver.getDriver();
-//		elementoClicavel(driver);
-		Alert alert = driver.switchTo().alert();
-		alert.accept();
-		String valor = alert.getText();
-		return valor;
+		
+	public String getText(WebDriver driver) {
+		WebElement text = elementoClicavel(driver);		
+		return text.getText();
 	}
 
-	public String getValue() {
-		return this.value;
-	}
 	
-	public void scrollParaCima(WebDriver driver) throws InterruptedException {
+	public void scroll(WebDriver driver) throws InterruptedException {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", elementoClicavel(driver));
 	}
 	
-	public void scrollParaBaixo(WebDriver driver) throws InterruptedException {
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", elementoClicavel(driver));
-
+	public String getTitle(WebDriver driver) {
+		return driver.getTitle();
 	}
-	
 	
 	
 	
