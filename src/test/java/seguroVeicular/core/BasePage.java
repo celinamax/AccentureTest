@@ -1,4 +1,4 @@
-package testeAccenture.core;
+package seguroVeicular.core;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import testeAccenture.enums.ByValue;
+import seguroVeicular.enums.ByValue;
 
 public class BasePage {
 	private WebDriver driver;

@@ -8,7 +8,7 @@ E realizar o envio da solicitacao
 @seguro
 Cenario: Preencher Solicitacao Online
 	Dado que o cliente acessa o site da seguradora
-	E preencha o formulário com os dados do veiculo
+	E preencha o formulario com os dados do veiculo
 	E insira os dados do seguro
 	E  insira os dados do produto
 	E seleciona a opcao de preco

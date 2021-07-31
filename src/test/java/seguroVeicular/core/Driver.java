@@ -1,4 +1,4 @@
-package testeAccenture.core;
+package seguroVeicular.core;
 
 
 import java.util.concurrent.TimeUnit;

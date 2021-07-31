@@ -1,9 +1,9 @@
-package testeAccenture.pages;
+package seguroVeicular.pages;
 
 import org.openqa.selenium.WebDriver;
 
-import testeAccenture.core.BasePage;
-import testeAccenture.enums.ByValue;
+import seguroVeicular.core.BasePage;
+import seguroVeicular.enums.ByValue;
 
 public class ProductDataPage {
 	private WebDriver driver;
@@ -21,7 +21,7 @@ public class ProductDataPage {
 	public BasePage buttonNext = new BasePage(driver, ByValue.XPATH, "//button[@id='nextselectpriceoption']");
 
 	public void preencherDadosDoProduto(WebDriver driver) {
-		startDate.sendKeys(driver, "08/06/2021");
+		startDate.sendKeys(driver, "08/12/2022");
 		insuranceSum.select(driver, "3.000.000,00");
 		meritRating.select(driver, "Super Bonus");
 		damageInsurance.select(driver, "Full Coverage");

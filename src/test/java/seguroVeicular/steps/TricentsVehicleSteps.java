@@ -1,4 +1,4 @@
-package testeAccenture.steps;
+package seguroVeicular.steps;
 
 
 import java.io.File;
@@ -15,12 +15,12 @@ import cucumber.api.java.After;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
-import testeAccenture.core.Driver;
-import testeAccenture.pages.InsurantDataPage;
-import testeAccenture.pages.PriceOptionPage;
-import testeAccenture.pages.ProductDataPage;
-import testeAccenture.pages.SendQuotePage;
-import testeAccenture.pages.VehiclePage;
+import seguroVeicular.core.Driver;
+import seguroVeicular.pages.InsurantDataPage;
+import seguroVeicular.pages.PriceOptionPage;
+import seguroVeicular.pages.ProductDataPage;
+import seguroVeicular.pages.SendQuotePage;
+import seguroVeicular.pages.VehiclePage;
 
 public class TricentsVehicleSteps {
 	static WebDriver driver;
@@ -37,9 +37,9 @@ public class TricentsVehicleSteps {
 		new Driver();
 		driver = Driver.getDriver();
 	}
-
-	@Dado("^preencha o formulário com os dados do veiculo$")
-	public void preenchaOFormulárioComOsDadosDoVeiculo() throws Exception {
+		
+	@Dado("^preencha o formulario com os dados do veiculo$")
+	public void preencha_o_formulario_com_os_dados_do_veiculo() throws Throwable {
 		vehiclePage.preencherFormulario(driver);
 		Assert.assertEquals("Enter Insurant Data", driver.getTitle());
 	}
@@ -70,7 +70,8 @@ public class TricentsVehicleSteps {
 
 	@Entao("^deve verificar a mensagem de sucesso$")
 	public void deveVerificarAMensagemDeSucesso() throws InterruptedException {
-		sendQuote.validaMsg(driver);
+		Assert.assertEquals("Sending e-mail success!",sendQuote.getMsg(driver));
+		sendQuote.confirmButton(driver);
 	}
 	
 	

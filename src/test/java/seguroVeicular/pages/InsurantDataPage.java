@@ -1,10 +1,9 @@
-package testeAccenture.pages;
+package seguroVeicular.pages;
 
 import org.openqa.selenium.WebDriver;
 
-import junit.framework.Assert;
-import testeAccenture.core.BasePage;
-import testeAccenture.enums.ByValue;
+import seguroVeicular.core.BasePage;
+import seguroVeicular.enums.ByValue;
 
 public class InsurantDataPage {
 	private WebDriver driver;

@@ -1,4 +1,4 @@
-package testeAccenture.runners;
+package seguroVeicular.runners;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,7 +16,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.Scenario;
 import cucumber.api.SnippetType;
 import cucumber.api.junit.Cucumber;
-import testeAccenture.core.Driver;
+import seguroVeicular.core.Driver;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
